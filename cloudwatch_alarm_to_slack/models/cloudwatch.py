@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 @dataclass
 class CloudwatchTrigger:
-    """Model for a Cloudwatch event"""
+    """Model for a Cloudwatch event."""
     metric: str
     namespace: str
     statistic: str
@@ -17,7 +17,7 @@ class CloudwatchTrigger:
 
 @dataclass
 class CloudwatchEvent:
-    """Model for a Cloudwatch trigger"""
+    """Model for a Cloudwatch trigger."""
     account: str
     name: str
     description: str

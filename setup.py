@@ -9,7 +9,6 @@ setup(
       author_email='dhas.jermila@gmail.com',
       python_requires='>=3.6',
       description='Module to send cloudwatch alarm events from sns to slack',
-      install_requires=requirements,
       license='MIT license',
       keywords='cloudwatch_alarm_to_slack',
       name='cloudwatch_alarm_to_slack',

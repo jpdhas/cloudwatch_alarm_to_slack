@@ -1,15 +1,19 @@
 """Module to process incoming cloudwatch event for an alarm."""
 
-from cloudwatch_alarm_to_slack.models.cloudwatch import CloudwatchEvent, CloudwatchTrigger
-from cloudwatch_alarm_to_slack.events.slack import Slack
-
 import cloudwatch_alarm_to_slack.utils.log as log
+from cloudwatch_alarm_to_slack.events.slack import Slack
+from cloudwatch_alarm_to_slack.models.cloudwatch import (CloudwatchEvent,
+                                                         CloudwatchTrigger)
+
 LOGGER = log.custom_logger(__name__)
 
+
 class CloudwatchAlarm:
+    """Handle a cloudwatch alarm from SNS."""
 
     @staticmethod
     def process_alarm(alarm={}):
+        """Process incoming cloudwatch alarm."""
         cloudwatch_event = CloudwatchEvent(
             account=alarm.get('AWSAccountId'),
             name=alarm.get('AlarmName'),
@@ -30,19 +34,19 @@ class CloudwatchAlarm:
         LOGGER.info(' Processing Cloudwatch event: %s', cloudwatch_event)
         alarm_state = CloudwatchAlarm.message_status(alarm_state=alarm.get('NewStateValue'))
         attachment = Slack.format_message(
-            alarm = cloudwatch_event,
-            state = alarm_state
+            alarm=cloudwatch_event,
+            state=alarm_state
         )
         Slack().send_message(
             attachment=attachment
         )
 
-
     @staticmethod
     def message_status(alarm_state=None):
+        """Set status of slack message based on cloudwatch alarm status."""
         if alarm_state == 'ALARM':
             color = "danger"
         else:
             color = "good"
-        
+
         return color

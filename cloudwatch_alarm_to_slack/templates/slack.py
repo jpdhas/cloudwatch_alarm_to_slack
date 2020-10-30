@@ -1,6 +1,8 @@
 """Module to format slack message for a cloudwatch alarm event."""
 
+
 def slack_attachment(alarm, state):
+    """Return the slack attachment for a cloudwatch alarm."""
     return [
         {
             "color": state,
