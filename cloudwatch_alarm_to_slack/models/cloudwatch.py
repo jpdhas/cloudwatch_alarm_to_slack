@@ -1,6 +1,6 @@
 """Module to define the data model for cloudwatch event and trigger."""
 
-from dataclasses import dataclass
+from pydantic.dataclasses import dataclass
 
 
 @dataclass
