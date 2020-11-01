@@ -1,11 +1,11 @@
-"""Tests for cloudwatch_alarm_to_slack/notifier."""
+"""Tests for cloudwatch_alarm_to_slack/entrypoint."""
 
 from unittest import mock
 
 import pytest
 
 from cloudwatch_alarm_to_slack.errors import MalformedSnsPayloadError
-from cloudwatch_alarm_to_slack.notifier import handle_event
+from cloudwatch_alarm_to_slack.entrypoint import CloudwatchAlarmNotifier
 
 
 @mock.patch('cloudwatch_alarm_to_slack.events.cloudwatch.CloudwatchAlarm.process_alarm')
@@ -24,7 +24,7 @@ def test_cloudwatch_alarm_process_alarm(mock_cloudwatch_alarm):
         ]
     }
 
-    handle_event(mock_cloudwatch_event)
+    CloudwatchAlarmNotifier.handle_event(mock_cloudwatch_event)
     mock_message = {
         'AlarmName': 'test_alarm',
         'AlarmDescription': 'test_description',
@@ -62,7 +62,7 @@ def test_cloudwatch_alarm_process_alarm_custom_exception_keyerror(mock_cloudwatc
     }
 
     with pytest.raises(MalformedSnsPayloadError):
-        handle_event(mock_cloudwatch_event)
+        CloudwatchAlarmNotifier.handle_event(mock_cloudwatch_event)
 
     mock_cloudwatch_alarm.assert_not_called()
 
@@ -76,6 +76,6 @@ def test_cloudwatch_alarm_process_alarm_custom_exception_indexerror(mock_cloudwa
     }
 
     with pytest.raises(MalformedSnsPayloadError):
-        handle_event(mock_cloudwatch_event)
+        CloudwatchAlarmNotifier.handle_event(mock_cloudwatch_event)
 
     mock_cloudwatch_alarm.assert_not_called()
