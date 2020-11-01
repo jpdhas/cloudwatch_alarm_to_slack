@@ -31,7 +31,7 @@ class Slack:
     def send_message(self, attachment=None):  # pragma: no cover
         """Sends message to slack."""
         LOGGER.info('Sending message to slack: %s', attachment)
-        self.client.chat_postMessage(
+        self.client().chat_postMessage(
             text='*AWS Cloudwatch Notification*',
             attachments=json.dumps(attachment),
             channel=self.slack_channel
