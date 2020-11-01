@@ -44,9 +44,11 @@ class CloudwatchAlarm:
     @staticmethod
     def message_status(alarm_state=None):
         """Set status of slack message based on cloudwatch alarm status."""
-        if alarm_state == 'ALARM':
+        if alarm_state == "ALARM":
             color = "danger"
-        else:
+        elif alarm_state == "OK":
             color = "good"
+        else:
+            color = "warning"
 
         return color
