@@ -1,4 +1,4 @@
-"""Test for cloudwatch_alarm_to_slack/notifier."""
+"""Tests for cloudwatch_alarm_to_slack/notifier."""
 
 from unittest import mock
 
