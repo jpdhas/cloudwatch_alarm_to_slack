@@ -1,8 +1,8 @@
 """Test for cloudwatch_alarm_to_slack/notifier."""
 
-from cloudwatch_alarm_to_slack.notifier import handle_event
-
 from unittest import mock
+
+from cloudwatch_alarm_to_slack.notifier import handle_event
 
 
 @mock.patch('cloudwatch_alarm_to_slack.events.cloudwatch.CloudwatchAlarm.process_alarm')
