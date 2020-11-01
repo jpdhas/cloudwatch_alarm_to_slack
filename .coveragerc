@@ -1,5 +1,7 @@
 [run]
 omit =
-    cloudwatch_alarm_to_slack/setup.py
-    cloudwatch_alarm_to_slack/tests/*
     *__init__.py
+    cloudwatch_alarm_to_slack/setup.py
+    cloudwatch_alarm_to_slack/utils/log.py
+    cloudwatch_alarm_to_slack/models/*
+    cloudwatch_alarm_to_slack/tests/*
