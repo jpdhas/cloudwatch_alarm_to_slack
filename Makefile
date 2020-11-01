@@ -11,6 +11,8 @@ help:
 	@echo "       run unit tests"
 	@echo "make lint"
 	@echo "       run flake8 and isort"
+	@echo "make devbuild"
+	@echo "       environment for local development"
 	@echo "make clean"
 	@echo "       clean venv"
 
@@ -42,6 +44,10 @@ flake8:
 isort:
 	$(info Make: Running isort)
 	@isort cloudwatch_alarm_to_slack/
+
+
+devbuild: venv
+	${PYTHON} setup.py install
 
 
 clean:
