@@ -15,10 +15,10 @@ help:
 	@echo "       clean venv"
 
 
-test: venv pytest clean
+test: venv pytest
 
 
-lint: venv flake8 isort clean
+lint: venv flake8 isort
 
 
 venv: $(VENV_NAME)/bin/activate
