@@ -7,6 +7,7 @@ from slack_sdk import WebClient
 
 import cloudwatch_alarm_to_slack.templates.slack as SlackTemplates
 import cloudwatch_alarm_to_slack.utils.log as log
+from cloudwatch_alarm_to_slack.errors import EnvironmentVariableNotFound
 
 LOGGER = log.custom_logger(__name__)
 
@@ -14,17 +15,20 @@ LOGGER = log.custom_logger(__name__)
 class Slack:
     """Handle interaction with slack."""
     def __init__(self):
-        if os.getenv('SLACK_BOT_TOKEN'):
-            self.client = WebClient(token=os.getenv('SLACK_BOT_TOKEN'))
-        else:
-            raise KeyError("SLACK_BOT_TOKEN environment variable not found.")
+        if not os.getenv('SLACK_BOT_TOKEN'):
+            raise EnvironmentVariableNotFound("SLACK_BOT_TOKEN not set.")
 
-        if os.getenv('SLACK_CHANNEL'):
-            self.slack_channel = os.getenv('SLACK_CHANNEL')
-        else:
-            raise KeyError("SLACK_CHANNEL environment variable not found.")
+        if not os.getenv('SLACK_CHANNEL'):
+            raise EnvironmentVariableNotFound("SLACK_CHANNEL not set.")
 
-    def send_message(self, attachment=None):
+        self.slack_token = os.getenv('SLACK_BOT_TOKEN')
+        self.slack_channel = os.getenv('SLACK_CHANNEL')
+
+    def client(self):  # pragma: no cover
+        """Create a slack client."""
+        return WebClient(token=self.slack_token)
+
+    def send_message(self, attachment=None):  # pragma: no cover
         """Sends message to slack."""
         LOGGER.info('Sending message to slack: %s', attachment)
         self.client.chat_postMessage(
