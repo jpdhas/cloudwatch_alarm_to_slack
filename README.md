@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     CloudwatchAlarmNotifier.handle_event(event)
 ```
 
-* It is expected the following environment variable be set:
+* It is required the following environment variable be set:
     
     - `SLACK_BOT_TOKEN`: Bot token of the slack app which should have the `chat:write` permissions.
     - `SLACK_CHANNEL`: ID of the Slack channel to which notification should be sent to.

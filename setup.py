@@ -18,7 +18,7 @@ setup(
       keywords='cloudwatch_alarm_to_slack',
       name='cloudwatch_alarm_to_slack',
       version='0.1',
-      url='http://github.com/storborg/funniest',
+      url='https://github.com/jpdhas/cloudwatch_alarm_to_slack',
       packages=['cloudwatch_alarm_to_slack'],
       classifiers=[
             "Programming Language :: Python :: 3",
