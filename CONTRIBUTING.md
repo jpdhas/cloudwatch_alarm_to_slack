@@ -56,30 +56,40 @@ Ready to contribute? Here's how to set up `cloudwatch_alarm_to_slack` for local 
 1. Fork the `cloudwatch_alarm_to_slack` repo on GitHub.
 2. Clone your fork locally::
 
+    ```
     $ git clone git@github.com:your_name_here/cloudwatch_alarm_to_slack.git
+    ```
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
 
+    ```
     $ make devbuild
     $ source venv/bin/activate
+    ```
 
 4. Create a branch for local development::
 
+    ```
     $ git checkout -b name-of-your-bugfix-or-feature
+    ```
 
    Now you can make your changes locally.
 
 5. When you're done making changes, check that your changes pass flake8 and the tests::
 
+    ```
     $ make lint
     $ make test
+    ```
 
 
 6. Commit your changes and push your branch to GitHub::
 
+    ```
     $ git add .
     $ git commit -m "Your detailed description of your changes."
     $ git push origin name-of-your-bugfix-or-feature
+    ```
 
 7. Submit a pull request through the GitHub website.
 
