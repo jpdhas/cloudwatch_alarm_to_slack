@@ -21,7 +21,7 @@ setuptools.setup(
       long_description_content_type="text/markdown",
       license='MIT license',
       name='cloudwatch_alarm_to_slack',
-      version='0.0.1',
+      version='0.2.0',
       python_requires='>=3.6',
       install_requires=requirements,
       packages=setuptools.find_packages(),
