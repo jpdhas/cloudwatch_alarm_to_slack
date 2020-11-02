@@ -15,6 +15,7 @@ LOGGER = log.custom_logger(__name__)
 class Slack:
     """Handle interaction with slack."""
     def __init__(self):
+        """Set environment variables."""
         if not os.getenv('SLACK_BOT_TOKEN'):
             raise EnvironmentVariableNotFound("SLACK_BOT_TOKEN not set.")
 
