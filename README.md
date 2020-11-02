@@ -5,6 +5,12 @@ A python library to send cloudwatch alarm notifications to Slack.
 
 ## Usage
 
+* Install the package.
+
+```
+pip install cloudwatch_alarm_to_slack
+```
+
 * It is expected this will be used as a part of a lambda.
 
 ```
