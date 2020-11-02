@@ -96,7 +96,7 @@ def test_bot_token_not_found_user_exception(monkeypatch):
 
 
 def test_slack_channel_not_found_user_exception(monkeypatch):
-    """Test if EnvironmentVariableNotFound is raised when SLACK_BOT_TOKEN is not set."""
+    """Test if EnvironmentVariableNotFound is raised when SLACK_CHANNEL is not set."""
     monkeypatch.delenv("SLACK_CHANNEL", raising=False)
 
     with pytest.raises(EnvironmentVariableNotFound):
