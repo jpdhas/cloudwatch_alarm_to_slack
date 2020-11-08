@@ -1,12 +1,9 @@
 ## Cloudwatch Alarm to Slack Notifier
 
-.. image:: https://img.shields.io/pypi/v/cloudwatch-alarm-to-slack.svg
-        :target: https://pypi.python.org/pypi/cloudwatch-alarm-to-slack
 
 
-.. image:: https://pyup.io/repos/github/jpdhas/tflapi/shield.svg
-     :target: https://pyup.io/repos/github/jpdhas/tflapi/
-     :alt: Updates
+[![pypi](https://img.shields.io/pypi/v/cloudwatch-alarm-to-slack.svg)](https://pypi.python.org/pypi/cloudwatch-alarm-to-slack)
+[![pyup](https://pyup.io/repos/github/jpdhas/cloudwatch_alarm_to_slack/shield.svg)](https://pyup.io/repos/github/jpdhas/cloudwatch_alarm_to_slack/)
 
 
 
