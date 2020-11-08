@@ -1,5 +1,15 @@
 ## Cloudwatch Alarm to Slack Notifier
 
+.. image:: https://img.shields.io/pypi/v/cloudwatch-alarm-to-slack.svg
+        :target: https://pypi.python.org/pypi/cloudwatch-alarm-to-slack
+
+
+.. image:: https://pyup.io/repos/github/jpdhas/tflapi/shield.svg
+     :target: https://pyup.io/repos/github/jpdhas/tflapi/
+     :alt: Updates
+
+
+
 A python library to send cloudwatch alarm notifications to Slack.
 
 
