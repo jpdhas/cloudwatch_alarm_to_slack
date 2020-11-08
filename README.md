@@ -2,8 +2,9 @@
 
 
 
-[![pypi](https://img.shields.io/pypi/v/cloudwatch-alarm-to-slack.svg)](https://pypi.python.org/pypi/cloudwatch-alarm-to-slack)
-[![pyup](https://pyup.io/repos/github/jpdhas/cloudwatch_alarm_to_slack/shield.svg)](https://pyup.io/repos/github/jpdhas/cloudwatch_alarm_to_slack/)
+[![pypi][pypi-image]][pypi-url]
+[![pyup][pyup-image]][pyup-url]
+[![python-version][python-version-image]][pypi-url]
 
 
 
@@ -36,3 +37,11 @@ def lambda_handler(event, context):
 ------
 
 If there is another usecase, please open an issue and let me know :) 
+
+<!-- Markdown links -->
+
+[pypi-image]: https://img.shields.io/pypi/v/cloudwatch-alarm-to-slack.svg
+[pypi-url]: https://pypi.python.org/pypi/cloudwatch-alarm-to-slack
+[pyup-image]: https://pyup.io/repos/github/jpdhas/cloudwatch_alarm_to_slack/shield.svg
+[pyup-url]: https://pyup.io/repos/github/jpdhas/cloudwatch_alarm_to_slack/
+[python-version-image]: https://img.shields.io/pypi/pyversions/cloudwatch-alarm-to-slack.svg
